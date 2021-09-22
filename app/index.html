@@ -9,30 +9,26 @@
     <script src="js/Angular/angular.min.js"></script>
     <script src="js/Modules/Spa.module.js"></script>
     <script src="js/Controllers/Spa.controller.js"></script>
-    <script src="js/Controllers/serchoptions.controller.js"></script>
-    <script src="js/Factory/infodata.factory.js"></script>
+    
+    <script src="js/Factory/Api.factory.js"></script>
     
 </head>
-<body >
-    <div class="search">
-        <input type="search" class="form-control" placeholder="Search" ng-model="searchText" />
-        
-        <select class="serchoptions" id="options" >
-            <option value="name">Name</option>
-            <option value="IsActive">IsActive</option>
-            <option value="age">Age</option>
-            <option value="gender">Gender</option>
-            <option value="about">about</option>
+<body ng-controller="SpaController" >
+    <div class="search" >
+       
+        <select class="serchoptions" id="options" 
+        ng-model="optionsSelected"
+        ng-options="sOptions.indexOf(optionsSelected) as optionsSelected for optionsSelected in sOptions">            
           </select>
-
+          <input type="search" class="form-control" placeholder="Search" ng-model="searchText" />
     </div>
 
-    <div class="content" ng-controller="SpaController">
+    <div class="content" >
       
-        <div class="card" ng-repeat=" person in personas | filter:searchText">
+        <div class="card" ng-repeat=" person in personas | filter:searchText[optionsSelected]">
           
             <img ng-src="{{ person.picture }}">
-            <div class="container" >
+            <div class="container">
               <p>Name: {{ person.name}}<p>
               <p>IsActive: {{person.isActive}} </p>
               <p>Age: {{person.age}} </p>

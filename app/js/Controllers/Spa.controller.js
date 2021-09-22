@@ -1,9 +1,18 @@
-angular.module("Spa").controller("SpaController", function($scope, infodata ){
+angular.module("Spa").controller("SpaController", function($scope, Api ){
    
     $scope.personas =[];    
-    infodata.list().then(function(res){
+    Api.list().then(function(res){
     $scope.personas = res;
    });
-    
+   var sOptions = [
+    'name',
+    'isActive',
+    'age',
+    'gender',
+    'about',
+
+];
+$scope.sOptions = sOptions;
+$scope.optionsSelected = null;
 });
 
