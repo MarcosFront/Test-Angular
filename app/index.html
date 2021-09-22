@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Spa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/style.css" rel="stylesheet">
+    <title>SPA</title>
+    <script src="js/Angular/angular.min.js"></script>
+    <script src="js/Modules/Spa.module.js"></script>
+    <script src="js/Controllers/Spa.controller.js"></script>
+    <script src="js/Controllers/serchoptions.controller.js"></script>
+    <script src="js/Factory/infodata.factory.js"></script>
+    
+</head>
+<body >
+    <div class="search">
+        <input type="search" class="form-control" placeholder="Search" ng-model="searchText" />
+        
+        <select class="serchoptions" id="options" >
+            <option value="name">Name</option>
+            <option value="IsActive">IsActive</option>
+            <option value="age">Age</option>
+            <option value="gender">Gender</option>
+            <option value="about">about</option>
+          </select>
+
+    </div>
+
+    <div class="content" ng-controller="SpaController">
+      
+        <div class="card" ng-repeat=" person in personas | filter:searchText">
+          
+            <img ng-src="{{ person.picture }}">
+            <div class="container" >
+              <p>Name: {{ person.name}}<p>
+              <p>IsActive: {{person.isActive}} </p>
+              <p>Age: {{person.age}} </p>
+              <p>Gender: {{person.gender}} </p>
+              <p>About: {{person.about}} </p>
+              
+              
+            </div>
+          </div>
+    </div>
+
+</body>
+</html> 

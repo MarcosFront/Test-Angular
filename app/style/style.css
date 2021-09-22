@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 100px;
+    border: 0;
+    background-color: #e2e2e2 ;
+    
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.form-control{
+    width: 70% ;
+    height: 30px;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    
+    margin-left: 50px;
+    margin-top: 50px;
+} 
+
+.container {
+    padding: 10px;
+    max-width: 200px;
+}
+
+.serchoptions{
+    width: 400px;
+}
