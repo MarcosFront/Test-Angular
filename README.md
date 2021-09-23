@@ -1,4 +1,8 @@
 # Test Angular
  Test Angular 1.8
 
-First clone the repository. Then in your terminal open the folder where the project is and use the command: npm instal, after installed use the command npm run serve,  to start the application.
+In order to start the application you need to have node.js installed on your computer. Once you have node.js installed, clone the application in github, after having cloned it follows the order to be able to run.
+
+1- Open the Cmd terminal, Node.js or in VsCode, access the folder where the project is. Enter the following command: npm instal. In order to install the server dependencies to be able to start the application.
+
+2- After having installed the server dependencies, use the following command to run the application. npm run serve.
