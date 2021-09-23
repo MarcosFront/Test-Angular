@@ -7,7 +7,7 @@ angular.module("Spa").controller("SpaController", function($scope, Api ){
    
    $scope.data = {
     model: null,
-    availableOptions: [
+    serchOptions: [
       {id: 'name', name: 'Name'},
       {id: 'isActive', name: 'isAcvtive'},
       {id: 'age', name: 'Age'},

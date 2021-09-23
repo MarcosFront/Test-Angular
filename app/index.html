@@ -8,27 +8,21 @@
     <title>SPA</title>
     <script src="js/Angular/angular.min.js"></script>
     <script src="js/Modules/Spa.module.js"></script>
-    <script src="js/Controllers/Spa.controller.js"></script>
-    
+    <script src="js/Controllers/Spa.controller.js"></script>    
     <script src="js/Factory/Api.factory.js"></script>
     
 </head>
 <body ng-controller="SpaController" >
-    <div class="search" >
-       
-       
-        <select class="serchoptions" id="repeatSelect" ng-model="data.model">
-          <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
-          
-        </select>
-        
+    <div class="search" >     
+          <select class="serchoptions" id="repeatSelect" ng-model="data.model">
+          <option ng-repeat="option in data.serchOptions" value="{{option.id}}">{{option.name}}</option>
+          </select>        
           <input type="search" class="form-control" placeholder="Search" ng-model="search[data.model]" />
     </div>
 
     <div class="content" >
       
-        <div class="card" ng-repeat=" person in personas | filter:search">
-          
+        <div class="card" ng-repeat=" person in personas | filter:search">          
             <img ng-src="{{ person.picture }}">
             <div class="container">
               <p>Name: {{ person.name}}<p>
